@@ -1,7 +1,6 @@
-const fs = require('fs');
-const request = require('request');
-const arg = process.argv.slice(2)
-const content = 'Some content!';
+const fs = require("fs");
+const request = require("request");
+const arg = process.argv.slice(2);
 
 const makingFile = function () {
   request.get(arg[0], (error, response, body) => {
@@ -12,12 +11,9 @@ const makingFile = function () {
       if (err) {
         console.error(err);
       }
-      console.log(`Downloded and saved ${body.length} bytes to ${arg[1]}`);
-
+      console.log(`Downloaded and saved ${body.length} bytes to ${arg[1]}`);
     });
-  })
-
+  });
 };
 
 makingFile();
-
